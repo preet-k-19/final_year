@@ -2,26 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import '../page_login.dart';
+import 'package:untitled2/colorPicking_page.dart';
+import '../../../draw.dart';
+import '../../../page_login.dart';
 
-class persistent_demo extends StatefulWidget {
-  const persistent_demo({super.key});
+// ignore: camel_case_types
+class persistent_Demo extends StatefulWidget {
+  const persistent_Demo({super.key});
 
   @override
-  State<persistent_demo> createState() => _persistent_demoState();
+  State<persistent_Demo> createState() => _persistent_demoState();
 }
 
-class _persistent_demoState extends State<persistent_demo> {
+// ignore: camel_case_types
+class _persistent_demoState extends State<persistent_Demo> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Persistent"),
-          elevation: 0,
-          backgroundColor: Colors.blueGrey,
-        ),
         body: PersistentTabView(
           context,
           screens: screens(),
@@ -35,15 +34,15 @@ class _persistent_demoState extends State<persistent_demo> {
   //list of class screens
   List<Widget> screens() {
     return [
-      Home_navigate(),
-
-      Chat_navigate(),
-      login(),
-      Profile_navigate()
+      const home_Navigate(),
+      color_picker(),
+      const ImagePainterExample(),
+      const login(),
+      const profile_Navigate()
     ];
   }
 
-  //navigation item style for each icon/pellete\
+  //navigation item style for each icon/pellete
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
@@ -59,14 +58,20 @@ class _persistent_demoState extends State<persistent_demo> {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.paintbrush),
+        title: ("Paint"),
+        activeColorPrimary: CupertinoColors.activeBlue,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.bell),
-        title: ("Notifivation"),
+        title: ("Notification"),
         activeColorPrimary: CupertinoColors.activeBlue,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.person),
-        title: ("Prifle"),
+        title: ("Profile"),
         activeColorPrimary: CupertinoColors.activeBlue,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
@@ -76,8 +81,9 @@ class _persistent_demoState extends State<persistent_demo> {
 
 //Lists of classes tha will be called when tapped on the particular item
 
-class Home_navigate extends StatelessWidget {
-  const Home_navigate({super.key});
+// ignore: camel_case_types
+class home_Navigate extends StatelessWidget {
+  const home_Navigate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,8 +97,9 @@ class Home_navigate extends StatelessWidget {
   }
 }
 
-class Chat_navigate extends StatelessWidget {
-  const Chat_navigate({super.key});
+// ignore: camel_case_types
+class chat_Navigate extends StatelessWidget {
+  const chat_Navigate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,12 +109,13 @@ class Chat_navigate extends StatelessWidget {
         Text("Chat Navigation Page",style: Theme.of(context).textTheme.titleLarge),
         Lottie.asset("assets/json/lt.json")
       ],
-    );;
+    );
   }
 }
 
-class Noti_navigate extends StatelessWidget {
-  const Noti_navigate({super.key});
+// ignore: camel_case_types
+class noti_Navigate extends StatelessWidget {
+  const noti_Navigate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -121,8 +129,9 @@ class Noti_navigate extends StatelessWidget {
   }
 }
 
-class Profile_navigate extends StatelessWidget {
-  const Profile_navigate({super.key});
+// ignore: camel_case_types
+class profile_Navigate extends StatelessWidget {
+  const profile_Navigate({super.key});
 
   @override
   Widget build(BuildContext context) {

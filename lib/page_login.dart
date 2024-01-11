@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/src/persistant_navigate.dart';
 import 'package:untitled2/src/utils/themes/theme.dart';
 
 // ignore: camel_case_types
