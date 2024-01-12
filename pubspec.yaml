@@ -40,19 +40,20 @@ dependencies:
   open_file: ^3.3.2
   gallery_saver: ^2.1.1
   image_gallery_saver: ^2.0.3
-  flutter_native_splash: ^2.3.9
+
   liquid_swipe: ^3.0.0
   smooth_page_indicator: ^1.0.0+2
   google_fonts: ^4.0.4
   lottie: ^1.0.1
   persistent_bottom_nav_bar: ^5.0.2
+  aura_box: ^1.0.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_colorpicker: ^1.0.3
-
+  flutter_native_splash: ^2.3.9
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -65,8 +66,8 @@ dev_dependencies:
 flutter_native_splash:
   color: "#f7f6f1"
   color_dark: "#272727"
-  image: imgs/ss.png
-  image_dark: imgs/ss.png
+  image: assets/images/img.png
+  image_dark: assets/images/img.png
 
 
 

@@ -1,5 +1,10 @@
+import 'package:aura_box/aura_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+
+
+
+
 
 void main() {
   runApp(MyApp());
@@ -8,8 +13,62 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: color_picker(),
+    return const MaterialApp(
+      home: aur_demo(),
+    );
+  }
+}
+
+
+// ignore: camel_case_types
+class aur_demo extends StatefulWidget {
+  const aur_demo({super.key});
+
+  @override
+  State<aur_demo> createState() => _aur_demoState();
+}
+
+// ignore: camel_case_types
+class _aur_demoState extends State<aur_demo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: AuraBox(
+        spots: [
+          // Places one blue spot in the center
+          AuraSpot(
+            color: Colors.blue,
+            radius: 800.0,
+            alignment: Alignment.topLeft,
+            blurRadius: 25.0,
+            stops: const [0.0, 0.5],
+          ),
+          // Places one red spot in the bottom right
+          AuraSpot(
+            color: Colors.red,
+            radius: 650.0,
+            alignment: Alignment.center,
+            blurRadius: 10.0,
+            stops: const [0.0, 0.5],
+          ),
+          AuraSpot(
+            color: Colors.grey,
+            radius: 650.0,
+            alignment: Alignment.bottomRight,
+            blurRadius: 10.0,
+            stops: const [0.0, 0.5],
+          ),
+        ],
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: const SizedBox(
+          height: 1000,
+          width: 500,
+        ),
+      ),
     );
   }
 }

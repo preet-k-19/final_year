@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled2/src/utils/themes/theme.dart';
 
+import 'colorPicking_page.dart';
+
 // ignore: camel_case_types
 class login extends StatelessWidget {
   const login({super.key});
@@ -10,11 +12,11 @@ class login extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
-          theme: TAppTheme.LightTheme,
-        darkTheme: TAppTheme.DarkTheme,
-    themeMode: ThemeMode.system,
-      home:  const login_(),
-      );
+      theme: TAppTheme.LightTheme,
+      darkTheme: TAppTheme.DarkTheme,
+      themeMode: ThemeMode.system,
+      home: const login_(),
+    );
   }
 }
 
@@ -35,13 +37,24 @@ class _loginState extends State<login_> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text ("Sub-heading",style: Theme.of(context).textTheme.displayMedium,),
-            Text("Paragraph",style: Theme.of(context).textTheme.displaySmall),
-            ElevatedButton (onPressed: () {
-              //Navigator.push(context, MaterialPageRoute(builder: (context) => persistent_demo(),));
-            }, child: const Text("Feed Page With Navigation Bar"), ),
-            OutlinedButton (onPressed: () {}, child: const Text ("Outlined Button"),)
-
+            Text(
+              "Sub-heading",
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
+            Text("Paragraph", style: Theme.of(context).textTheme.displaySmall),
+            ElevatedButton(
+              onPressed: () {
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => persistent_demo(),));
+              },
+              child: const Text("Feed Page With Navigation Bar"),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const aur_demo()));
+              },
+              child: const Text("Aura page (Gradient background test)"),
+            )
           ],
         ),
       ),
